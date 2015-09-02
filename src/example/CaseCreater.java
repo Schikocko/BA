@@ -34,11 +34,13 @@ public class CaseCreater extends SimProcess{
 		
 		Moving model = (Moving)getModel();
 		while (true){
-        // erstelle einen neuen Patienten
+        // creates a new moving case, that needs to be solved with the bin packing algorithm
         // Parameters:
-        // model       = Ist ein teil dieses Modell
-        // "Patient"   = Name der Entität
-        // true        = der Patient wird getraced
+        // model       = is part of the current model
+        // "Umzug"     = name of the entity 
+        // true        = get traced
+		// binObjects  = an Arraylist of the to be solved objects with size and name
+		// 10		   = bin capacity 
 		MovingCase newCase = new MovingCase (model, "Umzug", true, binObjects , 10);
 		
 		newCase.activateAfter(this);

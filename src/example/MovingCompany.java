@@ -1,10 +1,7 @@
 package example;
 import binPackingSolver.*;
 
-import java.util.concurrent.TimeUnit;
 
-
-import example.MovingCase;
 import desmoj.core.simulator.*;
 
 public class MovingCompany extends SimProcess {
@@ -32,7 +29,7 @@ public class MovingCompany extends SimProcess {
 	    */
 	   public void lifeCycle() {
 		   int overallBins= 0;
-		   
+		   //iterates over the global variable that stores all solved binpacking problems and "returns" the overall number of bins needed to store all objects 
 		 for (BinPacking pb : myModel.solvedCases)
 		 {
 			 overallBins = overallBins + pb.binsUsed();
