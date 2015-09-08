@@ -25,12 +25,13 @@ public class TestProblem {
 		
 
 		  
-		  BinPacking pb = new FirstFit(binObjects, 10);
-		  pb.solveBinPacking();		
+//		  BinPacking pb = new FirstFit(binObjects, 10);
+//		  pb.solveBinPacking();		
 
 		  
-	//	  BinPacking pb = new NextFit(binObjects, 10);
-	//	  pb.solveBinPacking();
+		  BinPacking pb = new NextFit(binObjects, 10);
+		  pb.solveBinPacking();
+		  pb.printBin();
 
 	  } 
 	

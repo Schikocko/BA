@@ -1,0 +1,112 @@
+
+
+bin0:  object0 36 object6 5 object8 7
+load: 48
+space left: 2
+bin1:  object1 44
+load: 44
+space left: 6
+bin2:  object2 37 object12 11
+load: 48
+space left: 2
+bin3:  object3 23 object5 18
+load: 41
+space left: 9
+bin4:  object4 31 object10 17
+load: 48
+space left: 2
+bin5:  object7 27 object11 19
+load: 46
+space left: 4
+bin6:  object9 31
+load: 31
+space left: 19
+bin7:  object13 36
+load: 36
+space left: 14
+bin8:  object14 39
+load: 39
+space left: 11
+bin9:  object15 24
+load: 24
+space left: 26
+
+
+bin0:  object0 7 object1 42
+load: 49
+space left: 1
+bin1:  object2 37 object6 2
+load: 39
+space left: 11
+bin2:  object3 42
+load: 42
+space left: 8
+bin3:  object4 40
+load: 40
+space left: 10
+bin4:  object5 29 object10 14
+load: 43
+space left: 7
+bin5:  object7 34
+load: 34
+space left: 16
+bin6:  object8 40
+load: 40
+space left: 10
+bin7:  object9 24 object12 18
+load: 42
+space left: 8
+bin8:  object11 38
+load: 38
+space left: 12
+bin9:  object13 22
+load: 22
+space left: 28
+bin10:  object14 32
+load: 32
+space left: 18
+
+
+bin0:  object0 44 object1 5
+load: 49
+space left: 1
+bin1:  object2 20 object3 9 object4 20
+load: 49
+space left: 1
+bin2:  object5 7 object6 12 object7 4
+load: 23
+space left: 27
+
+
+bin0:  object0 6 object1 36 object3 5 object5 3
+load: 50
+space left: 0
+bin1:  object2 18 object4 7 object6 23
+load: 48
+space left: 2
+bin2:  object7 40
+load: 40
+space left: 10
+
+
+bin0:  object0 21
+load: 21
+space left: 29
+bin1:  object1 35
+load: 35
+space left: 15
+bin2:  object2 49
+load: 49
+space left: 1
+bin3:  object3 33
+load: 33
+space left: 17
+bin4:  object4 49
+load: 49
+space left: 1
+bin5:  object5 43
+load: 43
+space left: 7
+bin6:  object6 45
+load: 45
+space left: 5

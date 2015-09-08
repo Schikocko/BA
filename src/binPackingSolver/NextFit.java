@@ -1,5 +1,13 @@
 package binPackingSolver;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+
+
 
 public class NextFit implements BinPacking{
 
@@ -47,13 +55,13 @@ public class NextFit implements BinPacking{
 			
 		}
 		//going over all initialized bins and prints their contained objects and weight
-		for (Bin b : Bins)
-		{
-			b.inputObjects(); //TODO make this go into the report file
-			System.out.println(b.load);
-			System.out.println(b.spaceLeft());
-		}
-		System.out.println("success");
+//		for (Bin b : Bins)
+//		{
+//			System.out.println (b.inputObjects()); //TODO make this go into the report file
+//			System.out.println(b.load);
+//			System.out.println(b.spaceLeft());
+//		}
+//		System.out.println("success");
 	//	System.out.println(searchBin(o.get(4)).name);
 	}
 	
@@ -75,17 +83,55 @@ public class NextFit implements BinPacking{
 			
 		}
 		//System.out.println("searched" + result);
-		return result;
-		
-		
-		
+		return result;		
 	}
+	
 	
 	// returns number of bins used to solve the problem
 		public int binsUsed(){
 			return Bins.size();
 		}
+		
+		/**
+		 * creates a new file and prints each bin and all objects contained 
+		 * aswell as the current load and the space left
+		 */
+		/**
+		 * creates a new file and prints each bin and all objects contained 
+		 * aswell as the current load and the space left
+		 */
+		public void printBin(){ //TODO reset file if restarted OR add to report
+
+	    	try {
+	    		 
+	  	      File file = new File("./bin_report.txt");
+	  	      
+	  	      if (file.createNewFile()){
+	  	      }else{
+	  	    
+	  	      }
+	  	      
+	      	} catch (IOException e) {
+	  	      e.printStackTrace();
+	  	}
+	    	
+	    	try{
+	    	PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("bin_report.txt", true)));
+			out.println("");
+			out.println("");
+			for (Bin b : Bins)
+			{
+				out.println (b.inputObjects());
+				out.println("load: " + b.load);
+				out.println("space left: " + b.spaceLeft());
+			}
+
+	    	out.close();
+	    	}catch (IOException e) {
+	  	      e.printStackTrace();
+	  	}
+		}
 
 
 
-}
+		}

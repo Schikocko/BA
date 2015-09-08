@@ -29,7 +29,7 @@ public class CaseCreater extends SimProcess{
 		
 	
 		ArrayList<BinObject> binObjects;
-		binObjects = new ArrayList<BinObject>();
+		
 		
 		
 //		  binObjects.add(new BinObject ("object0", 6)); //example
@@ -49,6 +49,7 @@ public class CaseCreater extends SimProcess{
 		
 		Moving model = (Moving)getModel();
 		while (true){
+			binObjects = new ArrayList<BinObject>();
 
 			
 			//new random ArrayList for each MovingCase

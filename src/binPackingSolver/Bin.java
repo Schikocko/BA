@@ -1,5 +1,6 @@
 package binPackingSolver;
 
+
 import java.util.ArrayList;
 
 public class Bin {
@@ -40,13 +41,15 @@ public class Bin {
 	
 	//Printing a List of all Objects in this current bin
 	//TODO show in report
-	public void inputObjects()
+	public String inputObjects()
 	{	
-		System.out.println(this.name +": ");
-		for (BinObject o : contains)
-			
-		
-		System.out.println(o.name + " " + o.weight);
+		String objects;
+		objects = (this.name +": ");
+		for (BinObject o : contains){
+
+		objects = objects +" " +(o.name + " " + o.weight);
+		}
+		return objects;
 	}
 	
 //	//sends trace notes of all bins and its contains TODO
@@ -91,5 +94,7 @@ public class Bin {
 		return maxCapacity - currentWeight();
 	}
 //TODO Output
+	
+
 	
 }
