@@ -50,7 +50,7 @@ public class MovingCompany extends SimProcess {
 			   {
 			   sendTraceNote("not enough trucks!");
 			   sendTraceNote(nextCase.neededTrucks +" " +"trucks " + "needed" + " "+ "but" +" " + "only" + myModel.availableTrucks + " " + "trucks "+ "available");
-			   myModel.waitingCompanyQueue.insert(this);
+			   myModel.waitingForTrucksQueue.insert(this);
 			   passivate(); //wait for a case to terminate, then check again if enough trucks are available for the case 
 			   }
 		   }

@@ -77,6 +77,11 @@ public class Moving extends Model {
 	   protected desmoj.core.simulator.ProcessQueue<MovingCompany> waitingCompanyQueue;
 	   
 	   /**
+	    * Queue for MovingCompany waiting for trucks to get released from cases
+	    */
+	   protected desmoj.core.simulator.ProcessQueue<MovingCompany> waitingForTrucksQueue;
+	   
+	   /**
 	    * a list in which all cases are placed, after the job is finish (for future notice)
 	    */   
 	   protected ArrayList<BinPacking> solvedCases;
@@ -219,13 +224,21 @@ public class Moving extends Model {
 		   waitingCaseQueue = new ProcessQueue<MovingCase>(this, "waitingCaseQueue", true, true);
 		   
 		   
-		   // creates a queue for cases that are waiting for available trucks
+		   // creates a queue for MovingCompany that is waiting for new Cases
 		   // Parameters:
 		   // this          = belongs to this model
 		   // "waitingCaseQueue" = the name of the Queue
 		   // true          = show in report?
 		   // true          = show in trace?
 		   waitingCompanyQueue = new ProcessQueue<MovingCompany>(this, "waitingCompanyQueue", true, true);
+		   
+		   // creates a queue for MovingCompany that is waiting for available trucks
+		   // Parameters:
+		   // this          = belongs to this model
+		   // "waitingCaseQueue" = the name of the Queue
+		   // true          = show in report?
+		   // true          = show in trace?
+		   waitingForTrucksQueue = new ProcessQueue<MovingCompany>(this, "waitingForTrucksQueue", true, true);
 	   }
 	   
 	   public static void main(java.lang.String[] args) 

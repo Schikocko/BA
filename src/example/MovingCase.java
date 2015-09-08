@@ -42,7 +42,7 @@ public class MovingCase extends SimProcess{
 	   public void lifeCycle() {
 		   
 		   myModel.waitingCaseQueue.insert(this);
-			  BinPacking pb = new NextFit(binObjects, cap);
+			  BinPacking pb = new FirstFit(binObjects, cap);
 			  pb.solveBinPacking();	
 			  neededTrucks = pb.binsUsed();
 
@@ -69,10 +69,10 @@ public class MovingCase extends SimProcess{
 			  sendTraceNote(myModel.availableTrucks + " " + "Trucks"+ " "+ "available");
 			  
 			  //check if the company is waiting for new trucks, if let it recheck the case if enough trucks are available 
-			   if(!myModel.waitingCompanyQueue.isEmpty())
+			   if(!myModel.waitingForTrucksQueue.isEmpty())
 			   {
-				   MovingCompany company = myModel.waitingCompanyQueue.first();
-				   myModel.waitingCompanyQueue.remove(company);
+				   MovingCompany company = myModel.waitingForTrucksQueue.first();
+				   myModel.waitingForTrucksQueue.remove(company);
 				   company.activateAfter(this);
 			   }
 
