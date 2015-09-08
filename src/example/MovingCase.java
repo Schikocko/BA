@@ -1,8 +1,7 @@
 package example;
 
 import java.util.ArrayList;
-
-
+import java.util.concurrent.TimeUnit;
 
 import binPackingSolver.*;
 import desmoj.core.simulator.*;
@@ -12,6 +11,8 @@ public class MovingCase extends SimProcess{
 	private Moving myModel;
 	ArrayList<BinObject> binObjects;
 	int cap;
+	int neededTrucks;
+	double time;
 	
 	/**
 	    * Constructor of a single moving case
@@ -22,11 +23,14 @@ public class MovingCase extends SimProcess{
 	    * @param showInTrace flag to indicate if this process shall produce output
 	    *                    for the trace
 	    */
-	   public MovingCase(Model owner, String name, boolean showInTrace, ArrayList<BinObject> o, int binCapacity){
+	   public MovingCase(Model owner, String name, boolean showInTrace, ArrayList<BinObject> o, int binCapacity, double caseTime){
 		   super (owner, name, showInTrace);
 			 myModel = (Moving)owner;
 			 binObjects = o;
+
 			 cap = binCapacity;
+			 //time needed to complete this order
+			 time = caseTime;
 
 	   }
 	
@@ -36,11 +40,42 @@ public class MovingCase extends SimProcess{
 	    *
 	    */
 	   public void lifeCycle() {
-
+		   
+		   myModel.waitingCaseQueue.insert(this);
 			  BinPacking pb = new NextFit(binObjects, cap);
 			  pb.solveBinPacking();	
-			  
+			  neededTrucks = pb.binsUsed();
+
+		   
+		   if(!myModel.waitingCompanyQueue.isEmpty())
+		   {
+			   MovingCompany company = myModel.waitingCompanyQueue.first();
+			   myModel.waitingCompanyQueue.remove(company);
+			   company.activateAfter(this);
+		   }
+		   
+		   passivate();
+
+
 			  myModel.solvedCases.add(pb);
+			  myModel.useTrucks( neededTrucks );
+			  sendTraceNote(this +" "+ "uses"+" "+ neededTrucks + " "+ "Trucks");
+			  sendTraceNote(myModel.availableTrucks + " " + "Trucks"+ " "+ "left");
+			  //this cases hold X trucks for time 
+			  hold(new TimeSpan(time, TimeUnit.MINUTES));
+			  myModel.setTrucksFree(neededTrucks);
+			  
+			  sendTraceNote(this +" "+ "releases"+" "+ neededTrucks + " "+ "Trucks");
+			  sendTraceNote(myModel.availableTrucks + " " + "Trucks"+ " "+ "available");
+			  
+			  //check if the company is waiting for new trucks, if let it recheck the case if enough trucks are available 
+			   if(!myModel.waitingCompanyQueue.isEmpty())
+			   {
+				   MovingCompany company = myModel.waitingCompanyQueue.first();
+				   myModel.waitingCompanyQueue.remove(company);
+				   company.activateAfter(this);
+			   }
+
 			  
 
 	   }

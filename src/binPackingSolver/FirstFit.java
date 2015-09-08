@@ -66,12 +66,12 @@ public class FirstFit implements BinPacking {
 		//going over all initialized bins and prints their contained objects and weight
 		for (Bin b : Bins)
 		{
-			b.inputObjects();
+			b.inputObjects(); //TODO make this go into the report file
 			System.out.println(b.load);
 			System.out.println(b.spaceLeft());
 		}
 		System.out.println("success");
-		System.out.println(searchBin(o.get(4)).name);
+//		System.out.println(searchBin(o.get(4)).name);
 	}
 	
 	//iterates through the ArrayList of bins and checks for the wanted object, returns the bin if the fbject was found  
