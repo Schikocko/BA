@@ -25,5 +25,5 @@ public interface BinPacking {
 	public int binsUsed();
 	
 	
-	public void printBin();
+	public void printBin(String name);
 }

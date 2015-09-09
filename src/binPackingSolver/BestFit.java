@@ -6,36 +6,34 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 
-
-
-public class NextFit implements BinPacking{
+public class BestFit implements BinPacking{
 
 	//input ArrayList with Objects
 	int maxCapacity; //maximal Capacity of the bins
 	ArrayList<Bin> Bins = new ArrayList<Bin>(); //ArrayList that contains all bins created
 	ArrayList<BinObject> binObjects = new ArrayList<BinObject>(); //ArrayList of all objects to be placed into bins
 
-	
 	/**
 	 * constructor 
 	 *
-	 *creates a new entity of NextFit, which solves the bin packing problem using the logic of the next fit algorithm
+	 *creates a new entity of BestFit, which solves the bin packing problem using the logic of the best fit algorithm
 	 *@param ArrayList<BinObject> the list of objects that need to be fit into bins
 	 *@param int binCapacity the maximal capacity of a single bin
 	 */
 	
-	public NextFit (ArrayList<BinObject> o, int binCapacity)
+	public BestFit (ArrayList<BinObject> o, int binCapacity)
 	{
 		binObjects = o;
 		maxCapacity = binCapacity;
 		
 	}
 
-
 	/**
 	 * this method has to be called to solve this actual case of a bin packing problem with the given parameter in the constructor  
-	 */	
+	 */
+	
 	public void solveBinPacking ()
 	{
 		ArrayList<BinObject> o = binObjects;
@@ -45,34 +43,40 @@ public class NextFit implements BinPacking{
 		
 		Bin currentBin = Bins.get(numberOfBins); //creates first bin with index 0
 		
+
+		
 		for (int i = 0; i <= o.size() -1 ; i=i+1)
 		{
-		
-			if(currentBin.maxCapacity >= o.get(i).weight + currentBin.load)
-				{currentBin.addObject(o.get(i));
-				
-				//System.out.println(numberOfBins +" "+ currentBin.load);
+			ArrayList<Integer> space = new ArrayList<Integer>(); //list that stores all feasible open spaces
+			ArrayList<Bin> minBin = new ArrayList<Bin>(); //all feasible bins
+			//creates an arraylist with the space left for all bins if object i would be added
+		    //iterates over all exciting bins 
+			for (Bin b: Bins){
+				int x=0;
+				x = b.spaceLeft() - o.get(i).weight; 
+				if(x >= 0) //if the space in the bin is >=0 AFTER the object is added it means the object fit into the bin
+				{
+				space.add(x); //add the space left to a list to find the minimum
+				minBin.add(b); //add the bin to and according list, with matching index 
 				}
-			else
-			{
+			//do nothing if the object would not fit in the bin
+			}
+			
+			if(space.isEmpty()){ // if the space list is empty, it means there are no bin, in which the object fitted -> create a new bin and put the ibject there
 				numberOfBins = numberOfBins + 1; 
 				Bins.add(new Bin ("bin"+numberOfBins, maxCapacity));
 				currentBin = Bins.get(numberOfBins);
 				currentBin.addObject(o.get(i));
 				//System.out.println(numberOfBins +" "+currentBin.load);
 				
+			}else{//if there is atleast one element in the space list, fit object fits in a exciting bin
+				int minIndex = space.indexOf(Collections.min(space)); //find the bin with the least space left, after the object would be added
+				minBin.get(minIndex).addObject(o.get(i)); // but the object in the according bin
 			}
 			
+			
 		}
-		//going over all initialized bins and prints their contained objects and weight
-//		for (Bin b : Bins)
-//		{
-//			System.out.println (b.inputObjects()); //TODO make this go into the report file
-//			System.out.println(b.load);
-//			System.out.println(b.spaceLeft());
-//		}
-//		System.out.println("success");
-	//	System.out.println(searchBin(o.get(4)).name);
+
 	}
 	
 	

@@ -1,5 +1,7 @@
 package example;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import desmoj.core.dist.ContDistExponential;
@@ -200,7 +202,7 @@ public class Moving extends Model {
 		   // 10                      = average time to complete an order
 		   // true                     = show in report?
 		   // false                    = show in trace?
-		   orderCompletionTime = new ContDistExponential(this, "OrderCompletionTime", 10 , true, false);
+		   orderCompletionTime = new ContDistExponential(this, "OrderCompletionTime", 15 , true, false);
 		   //completion times can't be negative
 		   orderCompletionTime.setNonNegative (true);
 		   
@@ -243,6 +245,21 @@ public class Moving extends Model {
 	   
 	   public static void main(java.lang.String[] args) 
 	   {
+		   
+	    	try { //TODO funktion erstellen! zum erstellen des reports!
+	    		 
+	    	      File file = new File("./bin_report.txt");
+	    	      
+	    	      if (file.createNewFile()){
+	    	      }else{
+	    	    	  file.delete();
+	    	    	  file.createNewFile();
+	    	    
+	    	      }
+	    	      
+	        	} catch (IOException e) {
+	    	      e.printStackTrace();
+	    	}
 		// creates model and experiment
 		   Moving model = new Moving(null, "Modell eines Umzugs", true, true);
 		  
@@ -255,8 +272,8 @@ public class Moving extends Model {
 		   
 		// sets experiment parameters
 		   exp.setShowProgressBar(true);  
-		   exp.stop(new TimeInstant(35, TimeUnit.MINUTES));   // 
-		   exp.tracePeriod(new TimeInstant(0), new TimeInstant(35, TimeUnit.MINUTES));
+		   exp.stop(new TimeInstant(350, TimeUnit.MINUTES));   // 
+		   exp.tracePeriod(new TimeInstant(0), new TimeInstant(350, TimeUnit.MINUTES));
 		                                              
 		   exp.debugPeriod(new TimeInstant(0), new TimeInstant(10, TimeUnit.MINUTES));  
 		   

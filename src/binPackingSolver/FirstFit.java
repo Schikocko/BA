@@ -1,7 +1,6 @@
 package binPackingSolver;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,7 +12,13 @@ public class FirstFit implements BinPacking {
 	ArrayList<Bin> Bins = new ArrayList<Bin>(); //ArrayList that contains all bins created
 	ArrayList<BinObject> binObjects = new ArrayList<BinObject>(); //ArrayList of all objects to be placed into bins
 
-	
+	/**
+	 * constructor 
+	 *
+	 *creates a new entity of FirstFit, which solves the bin packing problem using the logic of the first fit algorithm
+	 *@param ArrayList<BinObject> the list of objects that need to be fit into bins
+	 *@param int binCapacity the maximal capacity of a single bin
+	 */
 	public FirstFit (ArrayList<BinObject> o, int binCapacity)
 	{
 		binObjects = o;
@@ -22,6 +27,9 @@ public class FirstFit implements BinPacking {
 	}
 	
 	//TODO change void to ArrayList<Bin>
+	/**
+	 * this method has to be called to solve this actual case of a bin packing problem with the given parameter in the constructor  
+	 */
 	public void solveBinPacking ()
 	{
 		ArrayList<BinObject> o = binObjects;
@@ -110,25 +118,14 @@ public class FirstFit implements BinPacking {
 	 * creates a new file and prints each bin and all objects contained 
 	 * aswell as the current load and the space left
 	 */
-	public void printBin(){//TODO reset file if restarted OR add to report
+	public void printBin(String name){//TODO reset file if restarted OR add to report
 
-    	try {
-    		 
-  	      File file = new File("./bin_report.txt");
-  	      
-  	      if (file.createNewFile()){
-  	      }else{
-  	    
-  	      }
-  	      
-      	} catch (IOException e) {
-  	      e.printStackTrace();
-  	}
+
     	
     	try{
     	PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("bin_report.txt", true)));
 		out.println("");
-		out.println("");
+		out.println(name);
 		for (Bin b : Bins)
 		{
 			out.println (b.inputObjects());//TODO make this go into the report file
