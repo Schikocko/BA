@@ -29,9 +29,10 @@ public class TestProblem {
 //		  pb.solveBinPacking();		
 
 		  
-		  BinPacking pb = new BestFit(binObjects, 10);
+		  BinPacking pb = new NextFit(binObjects, 10, false);
 		  pb.solveBinPacking();
 		  pb.printBin("Test Problem");
+		  pb.sortDecreasing(binObjects);
 
 	  } 
 	

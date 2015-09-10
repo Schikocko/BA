@@ -42,7 +42,7 @@ public class MovingCase extends SimProcess{
 	   public void lifeCycle() {
 		   
 		   myModel.waitingCaseQueue.insert(this);
-			  BinPacking pb = new FirstFit(binObjects, cap);
+			  BinPacking pb = new FirstFit(binObjects, cap, true);
 			  pb.solveBinPacking();	
 			  pb.printBin(this.getName());
 			  neededTrucks = pb.binsUsed();

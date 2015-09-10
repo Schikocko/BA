@@ -1,0 +1,17 @@
+
+Test Problem
+bin0:  object3 7
+load: 7
+space left: 3
+bin1:  object0 6
+load: 6
+space left: 4
+bin2:  object8 6 object2 4
+load: 10
+space left: 0
+bin3:  object5 4 object1 3 object6 3
+load: 10
+space left: 0
+bin4:  object9 3 object7 2 object4 1
+load: 6
+space left: 4

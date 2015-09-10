@@ -5,24 +5,29 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class FirstFit implements BinPacking {
 	
 	int maxCapacity; //maximal Capacity of the bins
 	ArrayList<Bin> Bins = new ArrayList<Bin>(); //ArrayList that contains all bins created
 	ArrayList<BinObject> binObjects = new ArrayList<BinObject>(); //ArrayList of all objects to be placed into bins
+	boolean decrease = false;
 
 	/**
 	 * constructor 
 	 *
 	 *creates a new entity of FirstFit, which solves the bin packing problem using the logic of the first fit algorithm
 	 *@param ArrayList<BinObject> the list of objects that need to be fit into bins
-	 *@param int binCapacity the maximal capacity of a single bin
+	 *@param int binCapacity the maximal capacity of a single bin	
+	 *@param boolean decreasing if set on true the input ArrayList<BinObject> will get sorted decreasing before solving the problem
 	 */
-	public FirstFit (ArrayList<BinObject> o, int binCapacity)
+	public FirstFit (ArrayList<BinObject> o, int binCapacity, boolean decreasing)
 	{
 		binObjects = o;
 		maxCapacity = binCapacity;
+		decrease = decreasing;
 		
 	}
 	
@@ -32,7 +37,16 @@ public class FirstFit implements BinPacking {
 	 */
 	public void solveBinPacking ()
 	{
-		ArrayList<BinObject> o = binObjects;
+		ArrayList<BinObject> o;
+		
+		if(decrease) // if the algorithm should be decreasing, the input list will be sorted
+		{
+			o = sortDecreasing(binObjects);
+		}else // if it shouldn't be decreasing, the list is given unchanged to the solver
+		{
+			o = binObjects; 
+		}
+		
 		int numberOfBins = 0; //Indizes in the bin array
 	
 		Bins.add(new Bin ("bin"+numberOfBins, maxCapacity));
@@ -138,5 +152,25 @@ public class FirstFit implements BinPacking {
   	      e.printStackTrace();
   	}
 	}
+	
+	
+	/**
+	 * takes the given input and sorts in decreasing by objects weight, starting with the highest to the lowest 
+	 * @param ArrayList<BinObject> l ArrayList of the given objects for the problem
+	 */
+	public ArrayList<BinObject> sortDecreasing(ArrayList<BinObject> l){
+	
+		Collections.sort(l, new Comparator<BinObject>() {
+			public int compare (BinObject o1, BinObject o2){
+				return o2.weight - o1.weight;
+			}
+		});
+//		for (BinObject o : l) // outputs the new sorted objects 
+//		{
+//			System.out.println (o.weight); 
+//		}
+		return l;
+	}
+
 
 }

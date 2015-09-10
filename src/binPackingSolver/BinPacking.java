@@ -1,5 +1,7 @@
 package binPackingSolver;
 
+import java.util.ArrayList;
+
 public interface BinPacking {
 	
 	
@@ -26,4 +28,6 @@ public interface BinPacking {
 	
 	
 	public void printBin(String name);
+	
+	public ArrayList<BinObject> sortDecreasing (ArrayList<BinObject> l);
 }
