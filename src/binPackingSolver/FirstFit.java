@@ -1,12 +1,8 @@
 package binPackingSolver;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+
 
 public class FirstFit implements BinPacking {
 	
@@ -41,7 +37,7 @@ public class FirstFit implements BinPacking {
 		
 		if(decrease) // if the algorithm should be decreasing, the input list will be sorted
 		{
-			o = sortDecreasing(binObjects);
+			o = BinPackingHandler.sortDecreasing(binObjects);
 		}else // if it shouldn't be decreasing, the list is given unchanged to the solver
 		{
 			o = binObjects; 
@@ -85,8 +81,7 @@ public class FirstFit implements BinPacking {
 						//System.out.println(numberOfBins +" "+currentBin.load);	
 					}
 		
-		}
-		
+		}	
 		//TODO real return Bins
 		
 		
@@ -101,77 +96,85 @@ public class FirstFit implements BinPacking {
 ////		System.out.println(searchBin(o.get(4)).name);
 	}
 	
-	//iterates through the ArrayList of bins and checks for the wanted object, returns the bin if the fbject was found  
-	public Bin searchBin(BinObject o)
-	{
-		Bin result = null;
-		
-		for (Bin b : Bins)
-		{
-			if (b.containsObject(o))
-				{
-				return result = b;
-				}
-			else{
-			result = null;
-			}
-			
-		}
-		//System.out.println("searched" + result);
-		return result;
-		
-	}
-	
-// returns number of bins used to solve the problem
-	public int binsUsed(){
-		return Bins.size();
-	}
-	
-	
 	/**
-	 * creates a new file and prints each bin and all objects contained 
-	 * aswell as the current load and the space left
+	 * this method returns the solved ArrayList of Bins 
+	 * @return ArrayList of Bins
 	 */
-	public void printBin(String name){//TODO reset file if restarted OR add to report
-
-
-    	
-    	try{
-    	PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("bin_report.txt", true)));
-		out.println("");
-		out.println(name);
-		for (Bin b : Bins)
-		{
-			out.println (b.inputObjects());//TODO make this go into the report file
-			out.println("load: " + b.load);
-			out.println("space left: " + b.spaceLeft());
-		}
-
-    	out.close();
-    	}catch (IOException e) {
-  	      e.printStackTrace();
-  	}
+	public ArrayList<Bin> getBins(){
+		return Bins;
 	}
 	
-	
-	/**
-	 * takes the given input and sorts in decreasing by objects weight, starting with the highest to the lowest 
-	 * @param ArrayList<BinObject> l ArrayList of the given objects for the problem
-	 * @return return a new sorted ArrayList<BinObject> that can be used as input for the solveBinPacking() method  
-	 */
-	public ArrayList<BinObject> sortDecreasing(ArrayList<BinObject> l){
-	
-		Collections.sort(l, new Comparator<BinObject>() {
-			public int compare (BinObject o1, BinObject o2){
-				return o2.weight - o1.weight;
-			}
-		});
-//		for (BinObject o : l) // outputs the new sorted objects 
+//	//iterates through the ArrayList of bins and checks for the wanted object, returns the bin if the object was found  
+//	public Bin searchBin(BinObject o)
+//	{
+//		Bin result = null;
+//		
+//		for (Bin b : Bins)
 //		{
-//			System.out.println (o.weight); 
+//			if (b.containsObject(o))
+//				{
+//				return result = b;
+//				}
+//			else{
+//			result = null;
+//			}
+//			
 //		}
-		return l;
-	}
+//		//System.out.println("searched" + result);
+//		return result;
+//		
+//	}
+//	
+//// returns number of bins used to solve the problem
+//	public int binsUsed(){
+//		return Bins.size();
+//	}
+//	
+//	
+//	/**
+//	 * creates a new file and prints each bin and all objects contained 
+//	 * aswell as the current load and the space left
+//	 */
+//	public void printBin(String name){//TODO reset file if restarted OR add to report
+//
+//
+//    	
+//    	try{
+//    	PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("bin_report.txt", true)));
+//		out.println("");
+//		out.println(name);
+//		for (Bin b : Bins)
+//		{
+//			out.println (b.inputObjects());//TODO make this go into the report file
+//			out.println("load: " + b.load);
+//			out.println("space left: " + b.spaceLeft());
+//		}
+//
+//    	out.close();
+//    	}catch (IOException e) {
+//  	      e.printStackTrace();
+//  	}
+//	}
+//	
+//	
+//	/**
+//	 * takes the given input and sorts in decreasing by objects weight, starting with the highest to the lowest 
+//	 * @param ArrayList<BinObject> l ArrayList of the given objects for the problem
+//	 * @return return a new sorted ArrayList<BinObject> that can be used as input for the solveBinPacking() method  
+//	 */
+//	public ArrayList<BinObject> sortDecreasing(ArrayList<BinObject> l){
+//	
+//		Collections.sort(l, new Comparator<BinObject>() {
+//			public int compare (BinObject o1, BinObject o2){
+//				return o2.weight - o1.weight;
+//			}
+//		});
+////		for (BinObject o : l) // outputs the new sorted objects 
+////		{
+////			System.out.println (o.weight); 
+////		}
+//		return l;
+//	}
 
 
 }

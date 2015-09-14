@@ -1,7 +1,6 @@
 package example;
 
-import java.io.File;
-import java.io.IOException;
+
 import java.util.ArrayList;
 
 import desmoj.core.dist.ContDistExponential;
@@ -245,21 +244,9 @@ public class Moving extends Model {
 	   
 	   public static void main(java.lang.String[] args) 
 	   {
+		   //creates the report file and resets it with each new run
+		   BinPackingHandler.createBinReportFile();
 		   
-	    	try { //TODO funktion erstellen! zum erstellen des reports!
-	    		 
-	    	      File file = new File("./bin_report.txt");
-	    	      
-	    	      if (file.createNewFile()){
-	    	      }else{
-	    	    	  file.delete();
-	    	    	  file.createNewFile();
-	    	    
-	    	      }
-	    	      
-	        	} catch (IOException e) {
-	    	      e.printStackTrace();
-	    	}
 		// creates model and experiment
 		   Moving model = new Moving(null, "Modell eines Umzugs", true, true);
 		  

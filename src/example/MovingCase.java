@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import binPackingSolver.*;
 import desmoj.core.simulator.*;
 
+
 public class MovingCase extends SimProcess{
 	
 	private Moving myModel;
@@ -42,10 +43,10 @@ public class MovingCase extends SimProcess{
 	   public void lifeCycle() {
 		   
 		   myModel.waitingCaseQueue.insert(this);
-			  BinPacking pb = new FirstFit(binObjects, cap, true);
-			  pb.solveBinPacking();	
-			  pb.printBin(this.getName());
-			  neededTrucks = pb.binsUsed();
+			  BinPacking bp = new FirstFit(binObjects, cap, true);
+			  bp.solveBinPacking();	
+			  BinPackingHandler.printBin(this.getName(), bp);
+			  neededTrucks = BinPackingHandler.binsUsed(bp);
 
 		   
 		   if(!myModel.waitingCompanyQueue.isEmpty())
@@ -58,7 +59,7 @@ public class MovingCase extends SimProcess{
 		   passivate();
 
 
-			  myModel.solvedCases.add(pb);
+			  myModel.solvedCases.add(bp);
 			  myModel.useTrucks( neededTrucks );
 			  sendTraceNote(this +" "+ "uses"+" "+ neededTrucks + " "+ "Trucks");
 			  sendTraceNote(myModel.availableTrucks + " " + "Trucks"+ " "+ "left");
