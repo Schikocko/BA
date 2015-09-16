@@ -9,6 +9,7 @@ public class Bin {
 	int maxCapacity; 
 	int load; //current fill state
 	String name;
+	boolean used;
 	
 	
 	public Bin (String name, int capacity)
@@ -17,6 +18,7 @@ public class Bin {
 		this.maxCapacity = capacity;
 		this.load = 0;
 		this.name = name;
+		this.used = false;
 		
 	}
 	
@@ -94,7 +96,20 @@ public class Bin {
 		return maxCapacity - currentWeight();
 	}
 //TODO Output
-	
 
+	/**
+	 * 
+	 * @return returns the status of the current bin TRUE if used, FALSE if not used 
+	 */
+	public boolean getStatus(){
+		return used;
+	}
+
+	public void setBinUsed(){
+		used = true;
+	}
 	
+	public void setBinFree(){
+		used = false;
+	}
 }

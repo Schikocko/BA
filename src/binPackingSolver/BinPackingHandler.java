@@ -112,4 +112,17 @@ public class BinPackingHandler {
 //		}
 		return l;
 	}
+	
+	/**
+	 * this method can be used to set the status of all bins (only for global bin lists) used by a bin packing to unused again, after finish the job time 
+	 * @param BinPacking bp the method will reset the bins for the given bin packing problem 
+	 */	
+	public static void setAllBinsFree(BinPacking bp){
+		ArrayList<Bin> usedBins = new ArrayList<Bin>();
+		usedBins = bp.getBins();
+		
+		for (Bin b : usedBins){
+			b.setBinFree();
+		}
+	}
 }

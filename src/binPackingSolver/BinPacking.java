@@ -10,6 +10,12 @@ public interface BinPacking {
 	    *
 	    */
 	public void solveBinPacking ();
+
+	/**
+    * This method has to be called to actually solve the problem with the given parameter in the constructor
+    *
+    */
+	public boolean solveBinPacking (ArrayList<Bin> givenBins);
 	
 	 /**
 	    * this method returns the ArrayList of all used bins and their objects  
