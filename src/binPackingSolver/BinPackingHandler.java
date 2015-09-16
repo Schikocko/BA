@@ -40,6 +40,11 @@ public class BinPackingHandler {
 		
 	}
 	
+	/**
+	 * 
+	 * @param bp the bin packing problem of which the number of bins wanted
+	 * @return integer of the number of bins used to solve the problem
+	 */
 	public static int binsUsed(BinPacking bp){
 		return bp.getBins().size();
 	}

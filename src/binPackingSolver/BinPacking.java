@@ -13,12 +13,13 @@ public interface BinPacking {
 
 	/**
     * This method has to be called to actually solve the problem with the given parameter in the constructor
-    *
+    * @param ArrayList<Bin> the global list of Bins in which the, in the constructor given objects, shall be sorted
     */
 	public boolean solveBinPacking (ArrayList<Bin> givenBins);
 	
 	 /**
 	    * this method returns the ArrayList of all used bins and their objects  
+	    * @return ArrayList<Bin> with all bins used to solve this bin packing problem. these bins preference the objects they contain  
 	    */
 	public ArrayList<Bin> getBins();
 	

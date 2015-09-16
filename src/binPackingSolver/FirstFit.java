@@ -189,6 +189,9 @@ public class FirstFit implements BinPacking {
 	
 	/**
 	 * this method has to be called to solve this actual case of a bin packing problem with the given parameter in the constructor  
+	 * 
+	 * @param ArrayList<Bin> givenBins the global list of bins which all solver take their bins out
+	 * @return returns true if the algorithm was successful or false if either, there are not enough bins or the objects are too big for the bins left
 	 */
 	public boolean solveBinPacking (ArrayList<Bin> givenBins)
 	{

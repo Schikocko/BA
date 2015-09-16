@@ -186,6 +186,9 @@ public class BestFit implements BinPacking{
 	
 	/**
 	 * this method has to be called to solve this actual case of a bin packing problem with the given parameter in the constructor  
+	 * 
+	 * @param ArrayList<Bin> givenBins the global list of bins which all solver take their bins out
+	 * @return returns true if the algorithm was successful or false if either, there are not enough bins or the objects are too big for the bins left
 	 */
 	
 	public boolean solveBinPacking (ArrayList<Bin>  givenBins)
@@ -239,12 +242,14 @@ public class BestFit implements BinPacking{
 			//creates an arraylist with the space left for all bins if object i would be added
 		    //iterates over all exciting bins 
 			for (Bin b: Bins){
+				
 				int x=0;
-				x = b.spaceLeft() - o.get(i).weight; 
+				x = b.spaceLeft() - o.get(i).weight;
+				
 				if(x >= 0) //if the space in the bin is >=0 AFTER the object is added it means the object fit into the bin
 				{
-				space.add(x); //add the space left to a list to find the minimum
-				minBin.add(b); //add the bin to and according list, with matching index 
+					space.add(x); //add the space left to a list to find the minimum
+					minBin.add(b); //add the bin to and according list, with matching index 
 				}
 			//do nothing if the object would not fit in the bin
 			}
@@ -287,9 +292,4 @@ public class BestFit implements BinPacking{
 		}
 		return true;
 	}
-
-	
-	
-	
-
-		}
+}
