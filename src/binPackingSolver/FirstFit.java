@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class FirstFit implements BinPacking {
 	
-	int maxCapacity; //maximal Capacity of the bins
 	ArrayList<Bin> Bins = new ArrayList<Bin>(); //ArrayList that contains all bins created
 	ArrayList<BinObject> binObjects = new ArrayList<BinObject>(); //ArrayList of all objects to be placed into bins
 	boolean decrease = false;
@@ -19,10 +18,9 @@ public class FirstFit implements BinPacking {
 	 *@param int binCapacity the maximal capacity of a single bin	
 	 *@param boolean decreasing if set on true the input ArrayList<BinObject> will get sorted decreasing before solving the problem
 	 */
-	public FirstFit (ArrayList<BinObject> o, int binCapacity, boolean decreasing)
+	public FirstFit (ArrayList<BinObject> o, boolean decreasing)
 	{
 		binObjects = o;
-		maxCapacity = binCapacity;
 		decrease = decreasing;
 		
 	}
@@ -30,10 +28,12 @@ public class FirstFit implements BinPacking {
 	//TODO change void to ArrayList<Bin>
 	/**
 	 * this method has to be called to solve this actual case of a bin packing problem with the given parameter in the constructor  
+	 *@param int cap the maximal capacity of a single bin, these bins get newly created for this bin packing case
 	 */
-	public void solveBinPacking ()
+	public void solveBinPacking (int cap)
 	{
 		ArrayList<BinObject> o;
+		int maxCapacity = cap;
 		
 		if(decrease) // if the algorithm should be decreasing, the input list will be sorted
 		{

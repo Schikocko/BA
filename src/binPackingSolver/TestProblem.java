@@ -43,11 +43,11 @@ public class TestProblem {
 		
 
 		  
-//		  BinPacking pb = new FirstFit(binObjects, 10);
-//		  pb.solveBinPacking();		
+//		  BinPacking pb = new FirstFit(binObjects, false);
+//		  pb.solveBinPacking(10);		
 
 		  
-		  BinPacking bp = new NextFit(binObjects, 10, false);
+		  BinPacking bp = new NextFit(binObjects, false);
 		  
 		  if(!bp.solveBinPacking(useableBins)){
 			  System.out.println("failed");
