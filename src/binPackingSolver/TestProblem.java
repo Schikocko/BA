@@ -47,7 +47,7 @@ public class TestProblem {
 //		  pb.solveBinPacking(10);		
 
 		  
-		  BinPacking bp = new NextFit(binObjects, false);
+		  BinPacking bp = new NextFit(binObjects, true);
 		  
 		  if(!bp.solveBinPacking(useableBins)){
 			  System.out.println("failed");

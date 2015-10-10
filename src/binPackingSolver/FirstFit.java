@@ -8,7 +8,6 @@ public class FirstFit implements BinPacking {
 	
 	ArrayList<Bin> Bins = new ArrayList<Bin>(); //ArrayList that contains all bins created
 	ArrayList<BinObject> binObjects = new ArrayList<BinObject>(); //ArrayList of all objects to be placed into bins
-	boolean decrease = false;
 
 	/**
 	 * constructor 
@@ -20,9 +19,13 @@ public class FirstFit implements BinPacking {
 	 */
 	public FirstFit (ArrayList<BinObject> o, boolean decreasing)
 	{
-		binObjects = o;
-		decrease = decreasing;
-		
+		if(decreasing) // if the algorithm should be decreasing, the input list will be sorted
+		{
+			binObjects = BinPackingHandler.sortDecreasing(o);
+		}else // if it shouldn't be decreasing, the list is given unchanged to the solver
+		{
+			binObjects = o; 
+		}
 	}
 	
 	//TODO change void to ArrayList<Bin>
@@ -35,13 +38,9 @@ public class FirstFit implements BinPacking {
 		ArrayList<BinObject> o;
 		int maxCapacity = cap;
 		
-		if(decrease) // if the algorithm should be decreasing, the input list will be sorted
-		{
-			o = BinPackingHandler.sortDecreasing(binObjects);
-		}else // if it shouldn't be decreasing, the list is given unchanged to the solver
-		{
-			o = binObjects; 
-		}
+
+		o = binObjects; 
+
 		
 		int numberOfBins = 0; //Indizes in the bin array
 	
@@ -198,14 +197,9 @@ public class FirstFit implements BinPacking {
 		ArrayList<BinObject> o;
 		ArrayList<Bin> availableBins = new ArrayList<Bin>();
 		
-		
-		if(decrease) // if the algorithm should be decreasing, the input list will be sorted
-		{
-			o = BinPackingHandler.sortDecreasing(binObjects);
-		}else // if it shouldn't be decreasing, the list is given unchanged to the solver
-		{
-			o = binObjects; 
-		}
+
+		o = binObjects; 
+
 		
 		for (Bin b : givenBins){ //adds all available bins to an extra ArrayList
 			if(!b.getStatus()){

@@ -3,7 +3,7 @@ package binPackingSolver;
 
 import java.util.ArrayList;
 
-public class Bin {
+public class Bin { //TODO interface für bins und binobjects machen
 	
 	ArrayList<BinObject> contains;
 	int maxCapacity; 

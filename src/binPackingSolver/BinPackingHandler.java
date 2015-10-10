@@ -33,7 +33,6 @@ public class BinPackingHandler {
 			else{
 			result = null;
 			}
-			
 		}
 		System.out.println("searched" + result);
 		return result;
@@ -56,8 +55,7 @@ public class BinPackingHandler {
 	 * @param String name name of the current bin packing problem
 	 * @param Binpacking bp the input binpacking problem the needs to be printed
 	 */
-	public static void printBin(String name, BinPacking bp){//TODO reset file if restarted OR add to report
-
+	public static void printBin(String name, BinPacking bp){
 		ArrayList<Bin> Bins = new ArrayList<Bin>();
 		Bins = bp.getBins();
 
@@ -68,7 +66,7 @@ public class BinPackingHandler {
 		out.println(name);
 		for (Bin b : Bins)
 		{
-			out.println (b.inputObjects());//TODO make this go into the report file
+			out.println (b.inputObjects());
 			out.println("load: " + b.load);
 			out.println("space left: " + b.spaceLeft());
 		}

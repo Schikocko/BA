@@ -1939,3 +1939,43 @@ space left: 3
 bin8:  object15 10
 load: 10
 space left: 40
+
+Test Problem
+bin0:  object0 6
+load: 6
+space left: 4
+bin1:  object0 6 object1 3
+load: 9
+space left: 1
+bin4:  object2 4
+load: 4
+space left: 6
+bin5:  object3 7 object4 1
+load: 8
+space left: 2
+bin6:  object5 4 object6 3 object7 2
+load: 9
+space left: 1
+bin7:  object8 6 object9 3
+load: 9
+space left: 1
+
+Test Problem
+bin0:  object3 7
+load: 7
+space left: 3
+bin1:  object3 7
+load: 7
+space left: 3
+bin4:  object0 6
+load: 6
+space left: 4
+bin5:  object8 6 object2 4
+load: 10
+space left: 0
+bin6:  object5 4 object1 3 object6 3
+load: 10
+space left: 0
+bin7:  object9 3 object7 2 object4 1
+load: 6
+space left: 4
