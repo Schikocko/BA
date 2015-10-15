@@ -59,7 +59,7 @@ public class FirstFit implements BinPacking {
 
 				if(matched == false) //if not fit into a bin already 
 				{
-					if(currentBin.maxCapacity >= o.get(i).weight + currentBin.load) //test if it fits in the current bin j
+					if(currentBin.maxCapacity >= o.get(i).getWeight() + currentBin.getCurrentWeight()) //test if it fits in the current bin j
 						{currentBin.addObject(o.get(i));
 						matched = true;  //if it does, set matched true, so we can proceed with the next item
 						
@@ -216,7 +216,7 @@ public class FirstFit implements BinPacking {
 		//searches the first new bin it which the current item fits 
 		for (int j = 0; j <= availableBins.size() -1 ; j=j+1){//checks for all available bins until it finds a fitting one
 			
-			if(availableBins.get(j).maxCapacity >= o.get(0).weight && firstBin == false)//stops after it found a fitting bin
+			if(availableBins.get(j).getMaxCapacity() >= o.get(0).getWeight() && firstBin == false)//stops after it found a fitting bin
 			{ 
 				Bins.add(availableBins.get(j));
 				availableBins.get(j).setBinUsed();//first fitting bin of the available will be used
@@ -244,7 +244,7 @@ public class FirstFit implements BinPacking {
 
 				if(matched == false) //if not fit into a bin already 
 				{
-					if(currentBin.maxCapacity >= o.get(i).weight + currentBin.load) //test if it fits in the current bin j
+					if(currentBin.getMaxCapacity() >= o.get(i).getWeight() + currentBin.getCurrentWeight()) //test if it fits in the current bin j
 						{currentBin.addObject(o.get(i));
 						matched = true;  //if it does, set matched true, so we can proceed with the next item
 						
@@ -262,7 +262,7 @@ public class FirstFit implements BinPacking {
 						//searches the first new bin it which the current item fits 
 						for (int j = 0; j <= availableBins.size() -1 ; j=j+1){//checks for all available bins until it finds a fitting one
 							
-							if(availableBins.get(j).maxCapacity >= o.get(i).weight && newBin == false)//stops after it found a fitting bin
+							if(availableBins.get(j).getMaxCapacity() >= o.get(i).getWeight() && newBin == false)//stops after it found a fitting bin
 							{ 
 								numberOfBins = numberOfBins + 1;
 								Bins.add(availableBins.get(j)); //adds the fitting bin to the list of bins used for this case

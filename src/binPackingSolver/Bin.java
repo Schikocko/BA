@@ -3,7 +3,7 @@ package binPackingSolver;
 
 import java.util.ArrayList;
 
-public class Bin { //TODO interface für bins und binobjects machen
+public class Bin implements BinPackingBin{ //TODO interface für bins und binobjects machen
 	
 	ArrayList<BinObject> contains;
 	int maxCapacity; 
@@ -42,7 +42,12 @@ public class Bin { //TODO interface für bins und binobjects machen
 	
 	
 	//Printing a List of all Objects in this current bin
-	//TODO show in report
+	/**
+	 * this method returns all objects and their name and weight parameter 
+	 * used for printing all objects of a bin
+	 * 
+	 * @return returns a string that consists out of the object, the objects name and the weight of the object
+	 */
 	public String inputObjects()
 	{	
 		String objects;
@@ -78,27 +83,30 @@ public class Bin { //TODO interface für bins und binobjects machen
 	}
 
 	/**
-	 * 
-	 * 
 	 * @return returns the current weight of the bin as an integer 
 	 */
-	public int currentWeight()
+	public int getCurrentWeight()
 	{
 		return this.load;
+	}	
+	
+	/**
+	 * @return returns the maximum capacity of the bin as an integer 
+	 */
+	public int getMaxCapacity()
+	{
+		return this.maxCapacity;
 	}
 	
 	/**
-	 * 
-	 * @return returns an integer of the free Space in the bin 
+	 * @return returns an integer of the free space in the bin 
 	 */
 	public int spaceLeft()
 	{
-		return maxCapacity - currentWeight();
+		return maxCapacity - getCurrentWeight();
 	}
-//TODO Output
 
 	/**
-	 * 
 	 * @return returns the status of the current bin TRUE if used, FALSE if not used 
 	 */
 	public boolean getStatus(){

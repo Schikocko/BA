@@ -62,7 +62,7 @@ public class BestFit implements BinPacking{
 		    //iterates over all exciting bins 
 			for (Bin b: Bins){
 				int x=0;
-				x = b.spaceLeft() - o.get(i).weight; 
+				x = b.spaceLeft() - o.get(i).getWeight(); 
 				if(x >= 0) //if the space in the bin is >=0 AFTER the object is added it means the object fit into the bin
 				{
 				space.add(x); //add the space left to a list to find the minimum
@@ -169,12 +169,12 @@ public class BestFit implements BinPacking{
 //		
 //			Collections.sort(l, new Comparator<BinObject>() {
 //				public int compare (BinObject o1, BinObject o2){
-//					return o2.weight - o1.weight;
+//					return o2.getWeight() - o1.getWeight();
 //				}
 //			});
 ////			for (BinObject o : l) // outputs the new sorted objects 
 ////			{
-////				System.out.println (o.weight); 
+////				System.out.println (o.getWeight()); 
 ////			}
 //			return l;
 //		}
@@ -215,7 +215,7 @@ public class BestFit implements BinPacking{
 		//searches the first new bin it which the current item fits 
 		for (int j = 0; j <= availableBins.size() -1 ; j=j+1){//checks for all available bins until it finds a fitting one
 			
-			if(availableBins.get(j).maxCapacity >= o.get(0).weight && firstBin == false)//stops after it found a fitting bin
+			if(availableBins.get(j).getMaxCapacity() >= o.get(0).getWeight() && firstBin == false)//stops after it found a fitting bin
 			{ 
 				Bins.add(availableBins.get(j));
 				availableBins.get(j).setBinUsed();//first fitting bin of the available will be used
@@ -240,7 +240,7 @@ public class BestFit implements BinPacking{
 			for (Bin b: Bins){
 				
 				int x=0;
-				x = b.spaceLeft() - o.get(i).weight;
+				x = b.spaceLeft() - o.get(i).getWeight();
 				
 				if(x >= 0) //if the space in the bin is >=0 AFTER the object is added it means the object fit into the bin
 				{
@@ -255,7 +255,7 @@ public class BestFit implements BinPacking{
 				//searches the first new bin it which the current item fits 
 				for (int j = 0; j <= availableBins.size() -1 ; j=j+1){//checks for all available bins until it finds a fitting one
 					
-					if(availableBins.get(j).maxCapacity >= o.get(i).weight && newBin == false)//stops after it found a fitting bin
+					if(availableBins.get(j).getMaxCapacity() >= o.get(i).getWeight() && newBin == false)//stops after it found a fitting bin
 					{ 
 						numberOfBins = numberOfBins + 1;
 						Bins.add(availableBins.get(j)); //adds the fitting bin to the list of bins used for this case
