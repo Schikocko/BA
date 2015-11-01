@@ -40,6 +40,17 @@ public class Bin implements BinPackingBin{ //TODO interface für bins und binobje
 		
 	}
 	
+	/**
+	 * this method empties the bin, so that there are no more objects in it
+	 * 
+	 */
+	public void emptyBin ()
+	{
+		contains.clear();
+		load = 0;
+		used = false;
+	}
+	
 	
 	//Printing a List of all Objects in this current bin
 	/**
@@ -59,17 +70,7 @@ public class Bin implements BinPackingBin{ //TODO interface für bins und binobje
 		return objects;
 	}
 	
-//	//sends trace notes of all bins and its contains TODO
-//		public void traceBin(boolean a)
-//		{	
-//			if(a){
-//			sendTraceNote(this.name +": ");
-//			for (BinObject o : contains)
-//				
-//			
-//			sendTraceNote(o.name + " " + o.weight);
-///		}
-//		}
+
 	/**
 	 * this method searches through all objects in the bin and returns true if it is in this bin
 	 * 
@@ -101,7 +102,7 @@ public class Bin implements BinPackingBin{ //TODO interface für bins und binobje
 	/**
 	 * @return returns an integer of the free space in the bin 
 	 */
-	public int spaceLeft()
+	public int getSpaceLeft()
 	{
 		return maxCapacity - getCurrentWeight();
 	}

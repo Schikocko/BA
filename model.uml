@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_XRXKkHlyEeWsW6SvyZ3D2w" name="RootElement">
+  <packagedElement xmi:type="uml:Model" xmi:id="_gq8wIHlyEeWsW6SvyZ3D2w" name="generated"/>
+  <packagedElement xmi:type="uml:Model" xmi:id="_grVKoXlyEeWsW6SvyZ3D2w" name="datatype">
+    <packagedElement xmi:type="uml:Package" xmi:id="_grVKonlyEeWsW6SvyZ3D2w" name="datatype">
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_grVxsHlyEeWsW6SvyZ3D2w" name="Integer"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_grYN8HlyEeWsW6SvyZ3D2w" name="Boolean"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_nl364HlyEeWsW6SvyZ3D2w" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_nl364XlyEeWsW6SvyZ3D2w" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_nl4h8HlyEeWsW6SvyZ3D2w" name="lang">
+        <packagedElement xmi:type="uml:Class" xmi:id="_nl4h8XlyEeWsW6SvyZ3D2w" name="String"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_sUz5wHlzEeWsW6SvyZ3D2w" name="BA">
+    <packagedElement xmi:type="uml:Package" xmi:id="_sU4LMHlzEeWsW6SvyZ3D2w" name="binPackingSolver">
+      <packagedElement xmi:type="uml:Class" xmi:id="_sU5ZUHlzEeWsW6SvyZ3D2w" name="BestFit" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sU6ncXlzEeWsW6SvyZ3D2w" name="Bins" type="_sU6ncHlzEeWsW6SvyZ3D2w" isUnique="false">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sU7OgHlzEeWsW6SvyZ3D2w"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sU7OgXlzEeWsW6SvyZ3D2w" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sU71kHlzEeWsW6SvyZ3D2w" name="binObjects" type="_sU7OgnlzEeWsW6SvyZ3D2w" isUnique="false">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sU71kXlzEeWsW6SvyZ3D2w"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sU71knlzEeWsW6SvyZ3D2w" value="*"/>
+        </ownedAttribute>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_sU6AYXlzEeWsW6SvyZ3D2w" name="BestFit implements BinPacking" client="_sU5ZUHlzEeWsW6SvyZ3D2w" supplier="_sU6AYHlzEeWsW6SvyZ3D2w" contract="_sU6AYHlzEeWsW6SvyZ3D2w"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sU71k3lzEeWsW6SvyZ3D2w" name="solveBinPacking" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sU8coHlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method has to be called to solve this actual case of a bin packing problem with the given parameter in the constructor  &#xD;
+	 *@param int cap the maximal capacity of a single bin, these bins get newly created for this bin packing case&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sU8coXlzEeWsW6SvyZ3D2w" name="cap" type="_grVxsHlyEeWsW6SvyZ3D2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sU8conlzEeWsW6SvyZ3D2w" name="getBins" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sU8co3lzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method returns the solved ArrayList of Bins &#xD;
+	 * @return ArrayList of Bins&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sU9DsHlzEeWsW6SvyZ3D2w" type="_sU6ncHlzEeWsW6SvyZ3D2w" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sU9DsXlzEeWsW6SvyZ3D2w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sU9DsnlzEeWsW6SvyZ3D2w" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sU9Ds3lzEeWsW6SvyZ3D2w" name="solveBinPacking" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sU9qwHlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method has to be called to solve this actual case of a bin packing problem with the given parameter in the constructor  &#xD;
+	 * &#xD;
+	 * @param ArrayList&lt;Bin> givenBins the global list of bins which all solver take their bins out&#xD;
+	 * @return returns true if the algorithm was successful or false if either, there are not enough bins or the objects are too big for the bins left&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sU9qwXlzEeWsW6SvyZ3D2w" type="_grYN8HlyEeWsW6SvyZ3D2w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sU9qwnlzEeWsW6SvyZ3D2w" name="givenBins" type="_sU6ncHlzEeWsW6SvyZ3D2w">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sU9qw3lzEeWsW6SvyZ3D2w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sU-R0HlzEeWsW6SvyZ3D2w" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_sU6AYHlzEeWsW6SvyZ3D2w" name="BinPacking" visibility="public">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVLGIHlzEeWsW6SvyZ3D2w" name="solveBinPacking" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVLGIXlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	    * This method has to be called to actually solve the problem with the given parameter in the constructor&#xD;
+	    * this method creates new bins with the size of int cap and puts the objects given in the constructor into them&#xD;
+	    *@param int cap the maximal capacity of a single bin, these bins get newly created for this bin packing case&#xD;
+	    </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVLtMHlzEeWsW6SvyZ3D2w" name="cap" type="_grVxsHlyEeWsW6SvyZ3D2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVLtMXlzEeWsW6SvyZ3D2w" name="solveBinPacking" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVLtMnlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+    * This method has to be called to actually solve the problem with the given parameter in the constructor&#xD;
+    * this method puts the objects given in the constructor into the given list of bins  &#xD;
+    * @param ArrayList&lt;Bin> the global list of Bins in which the, in the constructor given objects, shall be sorted&#xD;
+    </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVMUQHlzEeWsW6SvyZ3D2w" type="_grYN8HlyEeWsW6SvyZ3D2w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVMUQXlzEeWsW6SvyZ3D2w" name="givenBins" type="_sU6ncHlzEeWsW6SvyZ3D2w">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVMUQnlzEeWsW6SvyZ3D2w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVMUQ3lzEeWsW6SvyZ3D2w" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVM7UHlzEeWsW6SvyZ3D2w" name="getBins" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVM7UXlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	    * this method returns the ArrayList of all used bins and their objects  &#xD;
+	    * @return ArrayList&lt;Bin> with all bins used to solve this bin packing problem. these bins preference the objects they contain  &#xD;
+	    </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVM7UnlzEeWsW6SvyZ3D2w" type="_sU6ncHlzEeWsW6SvyZ3D2w" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVM7U3lzEeWsW6SvyZ3D2w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVM7VHlzEeWsW6SvyZ3D2w" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_sU6ncHlzEeWsW6SvyZ3D2w" name="Bin" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sVBVIHlzEeWsW6SvyZ3D2w" name="contains" type="_sU7OgnlzEeWsW6SvyZ3D2w" isUnique="false">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVBVIXlzEeWsW6SvyZ3D2w"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVBVInlzEeWsW6SvyZ3D2w" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sVB8MHlzEeWsW6SvyZ3D2w" name="maxCapacity" type="_grVxsHlyEeWsW6SvyZ3D2w" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sVB8MXlzEeWsW6SvyZ3D2w" name="load" type="_grVxsHlyEeWsW6SvyZ3D2w" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sVB8MnlzEeWsW6SvyZ3D2w" name="name" type="_nl4h8XlyEeWsW6SvyZ3D2w" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sVCjQHlzEeWsW6SvyZ3D2w" name="used" type="_grYN8HlyEeWsW6SvyZ3D2w" isUnique="false"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_sVAuEXlzEeWsW6SvyZ3D2w" name="Bin implements BinPackingBin" client="_sU6ncHlzEeWsW6SvyZ3D2w" supplier="_sVAuEHlzEeWsW6SvyZ3D2w" contract="_sVAuEHlzEeWsW6SvyZ3D2w"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVCjQXlzEeWsW6SvyZ3D2w" name="addObject" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVCjQnlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method adds an objects to the bin&#xD;
+	 * &#xD;
+	 * @param BinObject i has to be a BinObject that will be added to the bin, if it fits&#xD;
+	 * &#xD;
+	 * @return returns true is successfully added, if it didn't fit due to the capacity it returns false &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVDKUHlzEeWsW6SvyZ3D2w" type="_grYN8HlyEeWsW6SvyZ3D2w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVDKUXlzEeWsW6SvyZ3D2w" name="i" type="_sU7OgnlzEeWsW6SvyZ3D2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVDKUnlzEeWsW6SvyZ3D2w" name="emptyBin" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVDKU3lzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method empties the bin, so that there are no more objects in it&#xD;
+	 * &#xD;
+	 </body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVDKVHlzEeWsW6SvyZ3D2w" name="inputObjects" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVDxYHlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method returns all objects and their name and weight parameter &#xD;
+	 * used for printing all objects of a bin&#xD;
+	 * &#xD;
+	 * @return returns a string that consists out of the object, the objects name and the weight of the object&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVDxYXlzEeWsW6SvyZ3D2w" type="_nl4h8XlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVDxYnlzEeWsW6SvyZ3D2w" name="containsObject" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVDxY3lzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method searches through all objects in the bin and returns true if it is in this bin&#xD;
+	 * &#xD;
+	 * @param BinObject i has to the BinObject that is searched for &#xD;
+	 * &#xD;
+	 * @return returns true if found in this bin, else false &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVDxZHlzEeWsW6SvyZ3D2w" type="_grYN8HlyEeWsW6SvyZ3D2w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVEYcHlzEeWsW6SvyZ3D2w" name="o" type="_sU7OgnlzEeWsW6SvyZ3D2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVEYcXlzEeWsW6SvyZ3D2w" name="getCurrentWeight" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVEYcnlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * @return returns the current weight of the bin as an integer &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVEYc3lzEeWsW6SvyZ3D2w" type="_grVxsHlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVEYdHlzEeWsW6SvyZ3D2w" name="getMaxCapacity" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVE_gHlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * @return returns the maximum capacity of the bin as an integer &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVE_gXlzEeWsW6SvyZ3D2w" type="_grVxsHlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVE_gnlzEeWsW6SvyZ3D2w" name="getSpaceLeft" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVE_g3lzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * @return returns an integer of the free space in the bin &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVE_hHlzEeWsW6SvyZ3D2w" type="_grVxsHlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVE_hXlzEeWsW6SvyZ3D2w" name="getStatus" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVFmkHlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * @return returns the status of the current bin TRUE if used, FALSE if not used &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVFmkXlzEeWsW6SvyZ3D2w" type="_grYN8HlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVFmknlzEeWsW6SvyZ3D2w" name="setBinUsed" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVFmk3lzEeWsW6SvyZ3D2w" name="setBinFree" visibility="public"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_sU7OgnlzEeWsW6SvyZ3D2w" name="BinObject" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sVIC0HlzEeWsW6SvyZ3D2w" name="name" type="_nl4h8XlyEeWsW6SvyZ3D2w" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sVIp4HlzEeWsW6SvyZ3D2w" name="weight" type="_grVxsHlyEeWsW6SvyZ3D2w" isUnique="false"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_sVHbwXlzEeWsW6SvyZ3D2w" name="BinObject implements BinPackingObject" client="_sU7OgnlzEeWsW6SvyZ3D2w" supplier="_sVHbwHlzEeWsW6SvyZ3D2w" contract="_sVHbwHlzEeWsW6SvyZ3D2w"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVIp4XlzEeWsW6SvyZ3D2w" name="getName" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVIp4nlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * @return returns the name of the object as a String&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVIp43lzEeWsW6SvyZ3D2w" type="_nl4h8XlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVIp5HlzEeWsW6SvyZ3D2w" name="getWeight" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVJQ8HlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * @return return the weight of the object as an integer&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVJQ8XlzEeWsW6SvyZ3D2w" type="_grVxsHlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_sVAuEHlzEeWsW6SvyZ3D2w" name="BinPackingBin" visibility="public">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVOwgHlzEeWsW6SvyZ3D2w" name="addObject" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVOwgXlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method adds an objects to the bin&#xD;
+	 * &#xD;
+	 * @param BinObject i has to be a BinObject that will be added to the bin, if it fits&#xD;
+	 * &#xD;
+	 * @return returns true is successfully added, if it didn't fit due to the capacity it returns false &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVOwgnlzEeWsW6SvyZ3D2w" type="_grYN8HlyEeWsW6SvyZ3D2w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVPXkHlzEeWsW6SvyZ3D2w" name="i" type="_sU7OgnlzEeWsW6SvyZ3D2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVPXkXlzEeWsW6SvyZ3D2w" name="emptyBin" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVPXknlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method empties the bin, so that there are no more objects in it&#xD;
+	 * &#xD;
+	 </body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVPXk3lzEeWsW6SvyZ3D2w" name="inputObjects" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVP-oHlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method returns all objects and their name and weight parameter &#xD;
+	 * used for printing all objects of a bin&#xD;
+	 * &#xD;
+	 * @return returns a string that consists out of the object, the objects name and the weight of the object&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVP-oXlzEeWsW6SvyZ3D2w" type="_nl4h8XlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVP-onlzEeWsW6SvyZ3D2w" name="containsObject" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVP-o3lzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method searches through all objects in the bin and returns true if it is in this bin&#xD;
+	 * &#xD;
+	 * @param BinObject i has to the BinObject that is searched for &#xD;
+	 * &#xD;
+	 * @return returns true if found in this bin, else false &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVP-pHlzEeWsW6SvyZ3D2w" type="_grYN8HlyEeWsW6SvyZ3D2w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVQlsHlzEeWsW6SvyZ3D2w" name="o" type="_sU7OgnlzEeWsW6SvyZ3D2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVQlsXlzEeWsW6SvyZ3D2w" name="getCurrentWeight" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVQlsnlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * @return returns the current weight of the bin as an integer &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVQls3lzEeWsW6SvyZ3D2w" type="_grVxsHlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVQltHlzEeWsW6SvyZ3D2w" name="getMaxCapacity" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVQltXlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * @return returns the maximum capacity of the bin as an integer &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVRMwHlzEeWsW6SvyZ3D2w" type="_grVxsHlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVRMwXlzEeWsW6SvyZ3D2w" name="getSpaceLeft" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVRMwnlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * @return returns an integer of the free space in the bin &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVRMw3lzEeWsW6SvyZ3D2w" type="_grVxsHlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVRMxHlzEeWsW6SvyZ3D2w" name="getStatus" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVRz0HlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * only used for global bin lists&#xD;
+	 * @return returns the status of the current bin TRUE if used, FALSE if not used &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVRz0XlzEeWsW6SvyZ3D2w" type="_grYN8HlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVRz0nlzEeWsW6SvyZ3D2w" name="setBinUsed" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVRz03lzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * changes the status parameter of the bin&#xD;
+	 * only used for global bin lists&#xD;
+	 </body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVRz1HlzEeWsW6SvyZ3D2w" name="setBinFree" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVRz1XlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * changes the status parameter of the bin&#xD;
+	 * only used for global bin lists&#xD;
+	 </body>
+          </ownedComment>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_sVHbwHlzEeWsW6SvyZ3D2w" name="BinPackingObject" visibility="public">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVa9wHlzEeWsW6SvyZ3D2w" name="getName" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVa9wXlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * @return returns the name of the object as a String&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVa9wnlzEeWsW6SvyZ3D2w" type="_nl4h8XlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVbk0HlzEeWsW6SvyZ3D2w" name="getWeight" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVbk0XlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * @return return the weight of the object as an integer&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVbk0nlzEeWsW6SvyZ3D2w" type="_grVxsHlyEeWsW6SvyZ3D2w" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_sVU3IHlzEeWsW6SvyZ3D2w" name="BinPackingHandler" visibility="public">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVVeMHlzEeWsW6SvyZ3D2w" name="searchBin" visibility="public" isStatic="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVVeMXlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+ 	* This method returns the bin which contains the searched BinObject&#xD;
+ 	* &#xD;
+    * @param BinObject o object that has to be found &#xD;
+    * @param BinPacking bp the input bin packing problem in which the BinObject has to be found&#xD;
+    </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVVeMnlzEeWsW6SvyZ3D2w" type="_sU6ncHlzEeWsW6SvyZ3D2w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVWFQHlzEeWsW6SvyZ3D2w" name="o" type="_sU7OgnlzEeWsW6SvyZ3D2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVWFQXlzEeWsW6SvyZ3D2w" name="bp" type="_sU6AYHlzEeWsW6SvyZ3D2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVWFQnlzEeWsW6SvyZ3D2w" name="binsUsed" visibility="public" isStatic="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVWFQ3lzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * &#xD;
+	 * @param bp the bin packing problem of which the number of bins wanted&#xD;
+	 * @return integer of the number of bins used to solve the problem&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVWsUHlzEeWsW6SvyZ3D2w" type="_grVxsHlyEeWsW6SvyZ3D2w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVWsUXlzEeWsW6SvyZ3D2w" name="bp" type="_sU6AYHlzEeWsW6SvyZ3D2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVWsUnlzEeWsW6SvyZ3D2w" name="printBin" visibility="public" isStatic="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVWsU3lzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * prints each bin and all objects contained in the file created with &quot;createBinReportFile&quot;&#xD;
+	 * aswell as the current load and the space left&#xD;
+	 * @param String name name of the current bin packing problem&#xD;
+	 * @param Binpacking bp the input binpacking problem the needs to be printed&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVXTYHlzEeWsW6SvyZ3D2w" name="name" type="_nl4h8XlyEeWsW6SvyZ3D2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVXTYXlzEeWsW6SvyZ3D2w" name="bp" type="_sU6AYHlzEeWsW6SvyZ3D2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVXTYnlzEeWsW6SvyZ3D2w" name="createBinReportFile" visibility="public" isStatic="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVX6cHlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+ 	* creates the output file for the printBin() method, needs to be called in the main() method&#xD;
+    </body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVX6cXlzEeWsW6SvyZ3D2w" name="sortDecreasing" visibility="public" isStatic="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVX6cnlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * takes the given input and sorts in decreasing by objects weight, starting with the highest to the lowest &#xD;
+	 * @param ArrayList&lt;BinObject> l ArrayList of the given objects for the problem&#xD;
+	 * @return return a new sorted ArrayList&lt;BinObject> that can be used as input for the solveBinPacking() method  &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVX6c3lzEeWsW6SvyZ3D2w" type="_sU7OgnlzEeWsW6SvyZ3D2w" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVYhgHlzEeWsW6SvyZ3D2w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVYhgXlzEeWsW6SvyZ3D2w" value="*"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVYhgnlzEeWsW6SvyZ3D2w" name="l" type="_sU7OgnlzEeWsW6SvyZ3D2w">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVYhg3lzEeWsW6SvyZ3D2w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVYhhHlzEeWsW6SvyZ3D2w" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVZIkHlzEeWsW6SvyZ3D2w" name="setAllBinsFree" visibility="public" isStatic="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVZIkXlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method can be used to set the status of all bins (only for global bin lists) used by a bin packing to unused again, after finish the job time &#xD;
+	 * also removes all objects for the bins&#xD;
+	 * @param BinPacking bp the method will reset the bins for the given bin packing problem &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVZIknlzEeWsW6SvyZ3D2w" name="bp" type="_sU6AYHlzEeWsW6SvyZ3D2w"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_sVf2QHlzEeWsW6SvyZ3D2w" name="FirstFit" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sVgdUXlzEeWsW6SvyZ3D2w" name="Bins" type="_sU6ncHlzEeWsW6SvyZ3D2w" isUnique="false">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVhEYHlzEeWsW6SvyZ3D2w"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVhEYXlzEeWsW6SvyZ3D2w" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sVhEYnlzEeWsW6SvyZ3D2w" name="binObjects" type="_sU7OgnlzEeWsW6SvyZ3D2w" isUnique="false">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVhEY3lzEeWsW6SvyZ3D2w"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVhrcHlzEeWsW6SvyZ3D2w" value="*"/>
+        </ownedAttribute>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_sVgdUHlzEeWsW6SvyZ3D2w" name="FirstFit implements BinPacking" client="_sVf2QHlzEeWsW6SvyZ3D2w" supplier="_sU6AYHlzEeWsW6SvyZ3D2w" contract="_sU6AYHlzEeWsW6SvyZ3D2w"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVhrcXlzEeWsW6SvyZ3D2w" name="solveBinPacking" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVhrcnlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method has to be called to solve this actual case of a bin packing problem with the given parameter in the constructor  &#xD;
+	 *@param int cap the maximal capacity of a single bin, these bins get newly created for this bin packing case&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVhrc3lzEeWsW6SvyZ3D2w" name="cap" type="_grVxsHlyEeWsW6SvyZ3D2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sViSgHlzEeWsW6SvyZ3D2w" name="getBins" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sViSgXlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method returns the solved ArrayList of Bins &#xD;
+	 * @return ArrayList of Bins&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sViSgnlzEeWsW6SvyZ3D2w" type="_sU6ncHlzEeWsW6SvyZ3D2w" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sViSg3lzEeWsW6SvyZ3D2w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sViShHlzEeWsW6SvyZ3D2w" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVi5kHlzEeWsW6SvyZ3D2w" name="solveBinPacking" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVi5kXlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method has to be called to solve this actual case of a bin packing problem with the given parameter in the constructor  &#xD;
+	 * &#xD;
+	 * @param ArrayList&lt;Bin> givenBins the global list of bins which all solver take their bins out&#xD;
+	 * @return returns true if the algorithm was successful or false if either, there are not enough bins or the objects are too big for the bins left&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVi5knlzEeWsW6SvyZ3D2w" type="_grYN8HlyEeWsW6SvyZ3D2w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVjgoHlzEeWsW6SvyZ3D2w" name="givenBins" type="_sU6ncHlzEeWsW6SvyZ3D2w">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVjgoXlzEeWsW6SvyZ3D2w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVjgonlzEeWsW6SvyZ3D2w" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_sVnyEHlzEeWsW6SvyZ3D2w" name="NextFit" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sVoZIHlzEeWsW6SvyZ3D2w" name="Bins" type="_sU6ncHlzEeWsW6SvyZ3D2w" isUnique="false">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVoZIXlzEeWsW6SvyZ3D2w"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVoZInlzEeWsW6SvyZ3D2w" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sVpAMHlzEeWsW6SvyZ3D2w" name="binObjects" type="_sU7OgnlzEeWsW6SvyZ3D2w" isUnique="false">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVpAMXlzEeWsW6SvyZ3D2w"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVpAMnlzEeWsW6SvyZ3D2w" value="*"/>
+        </ownedAttribute>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_sVnyEXlzEeWsW6SvyZ3D2w" name="NextFit implements BinPacking" client="_sVnyEHlzEeWsW6SvyZ3D2w" supplier="_sU6AYHlzEeWsW6SvyZ3D2w" contract="_sU6AYHlzEeWsW6SvyZ3D2w"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVpAM3lzEeWsW6SvyZ3D2w" name="solveBinPacking" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVpANHlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method has to be called to solve this actual case of a bin packing problem with the given parameter in the constructor  &#xD;
+	 *@param int cap the maximal capacity of a single bin, these bins get newly created for this bin packing case&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVpnQHlzEeWsW6SvyZ3D2w" name="cap" type="_grVxsHlyEeWsW6SvyZ3D2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVpnQXlzEeWsW6SvyZ3D2w" name="getBins" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVpnQnlzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method returns the solved ArrayList of Bins &#xD;
+	 * @return ArrayList of Bins&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVpnQ3lzEeWsW6SvyZ3D2w" type="_sU6ncHlzEeWsW6SvyZ3D2w" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVqOUHlzEeWsW6SvyZ3D2w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVqOUXlzEeWsW6SvyZ3D2w" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVqOUnlzEeWsW6SvyZ3D2w" name="solveBinPacking" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sVqOU3lzEeWsW6SvyZ3D2w">
+            <body>&#xD;
+	 * this method has to be called to solve this actual case of a bin packing problem with the given parameter in the constructor  &#xD;
+	 * &#xD;
+	 * @param ArrayList&lt;Bin> givenBins the global list of bins which all solver take their bins out&#xD;
+	 * @return returns true if the algorithm was successful or false if either, there are not enough bins or the objects are too big for the bins left&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVqOVHlzEeWsW6SvyZ3D2w" type="_grYN8HlyEeWsW6SvyZ3D2w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVq1YHlzEeWsW6SvyZ3D2w" name="givenBins" type="_sU6ncHlzEeWsW6SvyZ3D2w">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVq1YXlzEeWsW6SvyZ3D2w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVq1YnlzEeWsW6SvyZ3D2w" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_sVtRoHlzEeWsW6SvyZ3D2w" name="TestProblem" visibility="public">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVtRoXlzEeWsW6SvyZ3D2w" name="main" visibility="public" isStatic="true">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sVt4sHlzEeWsW6SvyZ3D2w" name="args" type="_nl4h8XlyEeWsW6SvyZ3D2w">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sVt4sXlzEeWsW6SvyZ3D2w"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sVt4snlzEeWsW6SvyZ3D2w" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

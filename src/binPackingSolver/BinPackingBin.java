@@ -12,6 +12,12 @@ public interface BinPackingBin {
 	public boolean addObject (BinObject i);
 	
 	/**
+	 * this method empties the bin, so that there are no more objects in it
+	 * 
+	 */
+	public void emptyBin ();
+	
+	/**
 	 * this method returns all objects and their name and weight parameter 
 	 * used for printing all objects of a bin
 	 * 
@@ -41,7 +47,7 @@ public interface BinPackingBin {
 	/**
 	 * @return returns an integer of the free space in the bin 
 	 */
-	public int spaceLeft();
+	public int getSpaceLeft();
 	
 	/**
 	 * only used for global bin lists

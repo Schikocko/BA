@@ -68,7 +68,7 @@ public class BinPackingHandler {
 		{
 			out.println (b.inputObjects());
 			out.println("load: " + b.load);
-			out.println("space left: " + b.spaceLeft());
+			out.println("space left: " + b.getSpaceLeft());
 		}
 
     	out.close();
@@ -109,15 +109,12 @@ public class BinPackingHandler {
 				return o2.weight - o1.weight;
 			}
 		});
-//		for (BinObject o : l) // outputs the new sorted objects 
-//		{
-//			System.out.println (o.weight); 
-//		}
 		return l;
 	}
 	
 	/**
 	 * this method can be used to set the status of all bins (only for global bin lists) used by a bin packing to unused again, after finish the job time 
+	 * also removes all objects for the bins
 	 * @param BinPacking bp the method will reset the bins for the given bin packing problem 
 	 */	
 	public static void setAllBinsFree(BinPacking bp){
@@ -126,6 +123,7 @@ public class BinPackingHandler {
 		
 		for (Bin b : usedBins){
 			b.setBinFree();
+			b.emptyBin();
 		}
 	}
 }
